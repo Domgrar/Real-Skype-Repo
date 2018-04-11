@@ -26,7 +26,7 @@ namespace TestBot.Dialogs
             {
                 //Initial dialog - returns the response to the MessageReceivedAsync method below
                 //await context.PostAsync("Please copy and paste in your ticket number:");
-                await context.PostAsync("Can you connect to our VPN Cisco Anyconnect");
+                await context.PostAsync("Can you connect to our VPN - (Cisco Anyconnect)");
 
                 context.Wait(this.MessageReceivedAsync);
 
