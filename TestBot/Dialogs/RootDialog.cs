@@ -40,6 +40,12 @@ namespace TestBot.Dialogs
                 Text = $"incident",
                 Value = $"incident"
             });
+            actions.Add(new CardAction
+            {
+                Title = $"Change Password",
+                Text = $"Change password",
+                Value = $"password"
+            });
 
             reply.Attachments.Add(
                 new HeroCard
@@ -79,7 +85,7 @@ namespace TestBot.Dialogs
             }
             else if (str.ToLower().Contains("password"))
             {
-                context.Call(new PasswordChangeDialog(), this.ResumeAfterTicketDialog);
+                context.Call(new VerificationDialog(), this.ResumeAfterTicketDialog);
             }
             else
             {

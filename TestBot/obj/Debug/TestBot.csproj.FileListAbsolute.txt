@@ -104,3 +104,60 @@ C:\Users\jf6856\OneDrive - DHG LLP\TestBot\TestBot\obj\Debug\Bot Application.dll
 C:\Users\jf6856\OneDrive - DHG LLP\TestBot\TestBot\obj\Debug\Bot Application.pdb
 C:\Users\jf6856\OneDrive - DHG LLP\TestBot\TestBot\obj\Debug\Interop.InteropExtensionLib.dll
 C:\Users\jf6856\OneDrive - DHG LLP\TestBot\TestBot\obj\Debug\TestBot.csproj.ResolveComReference.cache
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Bot Application.dll.config
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Bot Application.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Bot Application.pdb
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Autofac.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Chronic.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.Bot.Builder.Autofac.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.Bot.Builder.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.Bot.Connector.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.IdentityModel.Logging.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.IdentityModel.Protocol.Extensions.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.IdentityModel.Protocols.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.IdentityModel.Tokens.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.Rest.ClientRuntime.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.WindowsAzure.Configuration.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Newtonsoft.Json.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\System.Net.Http.Formatting.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\System.Web.Http.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\WebDriver.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Autofac.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.Bot.Builder.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.Bot.Builder.Autofac.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.Bot.Connector.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.IdentityModel.Logging.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.IdentityModel.Protocol.Extensions.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.IdentityModel.Protocols.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.IdentityModel.Protocols.OpenIdConnect.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.IdentityModel.Tokens.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Microsoft.WindowsAzure.Configuration.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Newtonsoft.Json.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\System.IdentityModel.Tokens.Jwt.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\System.Net.Http.Formatting.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\System.Web.Http.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\System.Web.Http.WebHost.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\WebDriver.xml
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\ar\Microsoft.Bot.Builder.resources.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\cs\Microsoft.Bot.Builder.resources.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\de-dE\Microsoft.Bot.Builder.resources.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\en\Microsoft.Bot.Builder.resources.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\es\Microsoft.Bot.Builder.resources.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\fa\Microsoft.Bot.Builder.resources.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\fr\Microsoft.Bot.Builder.resources.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\it\Microsoft.Bot.Builder.resources.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\ja\Microsoft.Bot.Builder.resources.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\nl\Microsoft.Bot.Builder.resources.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\pt-BR\Microsoft.Bot.Builder.resources.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\ru\Microsoft.Bot.Builder.resources.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\zh-hans\Microsoft.Bot.Builder.resources.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\obj\Debug\TestBot.csprojResolveAssemblyReference.cache
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\obj\Debug\Interop.InteropExtensionLib.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\obj\Debug\TestBot.csproj.ResolveComReference.cache
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\obj\Debug\TestBot.csproj.CoreCompileInputs.cache
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\obj\Debug\Bot Application.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\obj\Debug\Bot Application.pdb
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Twilio.dll
+C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\bin\Twilio.xml
