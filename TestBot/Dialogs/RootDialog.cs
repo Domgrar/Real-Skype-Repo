@@ -93,6 +93,10 @@ namespace TestBot.Dialogs
             {
                 context.Call(new VerificationDialog(), this.ResumeAfterTicketDialog);
             }
+            else if (str.ToLower().Contains("outtage"))
+            {
+                context.Call(new CheckOuttageDialog(), this.ResumeAfterTicketDialog);
+            }
             else
             {
                 

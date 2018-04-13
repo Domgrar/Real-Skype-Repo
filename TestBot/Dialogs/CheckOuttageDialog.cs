@@ -61,8 +61,11 @@ namespace TestBot.Dialogs
         {
             var activity = await result as Activity;
 
-            // pull from file somewhere
+            // pull from file somewhere so it can be updated without changing code
+            string text = System.IO.File.ReadAllText(@"C:\Users\jf6856\OneDrive - DHG LLP\GitHub\TestRepo\TestBot\OuttageFile.txt");
 
+            // Display the file contents to the console. Variable text is a string.
+            await context.PostAsync(text);
 
 
 
