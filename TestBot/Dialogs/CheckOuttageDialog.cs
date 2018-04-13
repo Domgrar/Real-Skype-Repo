@@ -8,6 +8,7 @@ using OpenQA.Selenium.IE;
 using System.Threading;
 using System.IO;
 using System.Diagnostics;
+using System.Collections.Generic;
 
 namespace TestBot.Dialogs
 {
@@ -26,9 +27,30 @@ namespace TestBot.Dialogs
         public async Task StartAsync(IDialogContext context)
         {
             //Button to select "check for outtages"
-            await context.PostAsync("");
+            var reply = context.MakeMessage();
+            reply.Attachments = new List<Attachment>();
+            var actions = new List<CardAction>();
 
+            actions.Add(new CardAction
+            {
+                Title = $"Check Outtage",
+                Text = $"Printer Action",
+                Value = $"Check for any Outtages"
+            });
+
+            reply.Attachments.Add(
+                new HeroCard
+                {
+                    Title = "Select what you would like to do:",
+                    Buttons = actions
+                }.ToAttachment()
+            );
+
+
+            await context.PostAsync(reply);
             context.Wait(this.MessageReceivedAsync);
+
+            
 
 
         }
@@ -39,7 +61,7 @@ namespace TestBot.Dialogs
         {
             var activity = await result as Activity;
 
-            
+            // pull from file somewhere
 
 
 
