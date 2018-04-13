@@ -46,6 +46,12 @@ namespace TestBot.Dialogs
                 Text = $"Change password",
                 Value = $"password"
             });
+            actions.Add(new CardAction
+            {
+                Title = $"Check Outtage",
+                Text = $"check outtage",
+                Value = $"outtage"
+            });
 
             reply.Attachments.Add(
                 new HeroCard
@@ -86,6 +92,10 @@ namespace TestBot.Dialogs
             else if (str.ToLower().Contains("password"))
             {
                 context.Call(new VerificationDialog(), this.ResumeAfterTicketDialog);
+            }
+            else if (str.ToLower().Contains("outtage"))
+            {
+                context.Call(new CheckOuttageDialog(), this.ResumeAfterTicketDialog);
             }
             else
             {

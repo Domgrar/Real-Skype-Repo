@@ -4,18 +4,37 @@ using System.Linq;
 using System.Web;
 using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using System.Threading;
 using System.Net;
 using System.Net.Mail;
 using System.Runtime.InteropServices;
 using Microsoft.Office.Core;
 using Outlook = Microsoft.Office.Interop.Outlook;
-
+using System.Text;
+using System.Diagnostics;
 
 namespace TestBot
 {
     public class TicketHandler
     {
+        [DllImport("user32.dll")]
+        static extern IntPtr GetForegroundWindow();
+
+        [DllImport("user32.dll")]
+        static extern IntPtr GetFocusedWindow();
+
+        [DllImport("users32.dll")]
+        static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
+
+        [DllImport("user32.dll", EntryPoint = "FindWindowEx")]
+        public static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfter, string lpszClass, string lpszWindow);
+        [DllImport("User32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int uMsg, int wParam, string lParam);
+
+        
+
         public IWebDriver Driver { get; set; }
         public String Name { get; set; }
         public string ticketID { get; set; }
@@ -31,8 +50,16 @@ namespace TestBot
             string managerName;
             string response;
             string progressText;
-
+            
             this.Driver.Navigate().GoToUrl("https://dhgllp.easyvista.com/");
+
+            
+
+            
+
+
+            
+
             Thread.Sleep(4000);
             
             IWebElement incidentSearch = this.Driver.FindElement(By.XPath("//input[@name='GlobalSearchText']"));
@@ -77,6 +104,7 @@ namespace TestBot
             this.Name = managerName;
             this.ticketID = ticketID;
 
+            this.Driver.Close();
             return response;
         }
 

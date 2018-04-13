@@ -5,7 +5,10 @@ using Microsoft.Bot.Connector;
 using System.Net.Http;
 using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using System.Threading;
+using OpenQA.Selenium.Remote;
 
 namespace TestBot.Dialogs
 {
@@ -45,9 +48,13 @@ namespace TestBot.Dialogs
             String ticketID = activity.Text;
             TicketHandler ticketH = new TicketHandler(ticketID);
 
+            var options = new InternetExplorerOptions();
+            options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
+
             // Search for ticket in EV
-            IWebDriver driver = new InternetExplorerDriver();
+            IWebDriver driver = new InternetExplorerDriver(options);
             ticketH.Driver = driver;
+            
             
             //Calls method to get all the ticket information
             string response = ticketH.getTicketInfo(ticketID);
