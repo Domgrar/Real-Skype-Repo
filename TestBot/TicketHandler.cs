@@ -52,12 +52,15 @@ namespace TestBot
             
             this.Driver.Navigate().GoToUrl("https://dhgllp.easyvista.com/");
 
-            Process[] notepads = Process.GetProcessesByName("Google Chrome");
-            if (notepads[0] != null)
-            {
-                IntPtr child = FindWindowEx(notepads[0].MainWindowHandle, new IntPtr(0), "{ENTER}", null);
-                SendMessage(child, 0x000C, 0, "#32770");
-            }
+            ProcessStartInfo PSI = new ProcessStartInfo("ClickThroughError.exe"); //         //"param1 jf6856"
+            
+            PSI.UseShellExecute = true;
+
+            
+
+
+            Process Proc = Process.Start(PSI);
+            Proc.WaitForExit();
             //SendMessage()
 
             Thread.Sleep(4000);
