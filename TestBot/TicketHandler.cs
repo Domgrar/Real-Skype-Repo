@@ -104,7 +104,7 @@ namespace TestBot
             this.Name = managerName;
             this.ticketID = ticketID;
 
-            //this.Driver.Close();
+            this.Driver.Close();
             return response;
         }
 
