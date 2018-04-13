@@ -5,6 +5,7 @@ using System.Web;
 using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Chrome;
+using OpenQA.Selenium.Firefox;
 using System.Threading;
 using System.Net;
 using System.Net.Mail;
@@ -52,16 +53,12 @@ namespace TestBot
             
             this.Driver.Navigate().GoToUrl("https://dhgllp.easyvista.com/");
 
-            ProcessStartInfo PSI = new ProcessStartInfo("ClickThroughError.exe"); //         //"param1 jf6856"
             
-            PSI.UseShellExecute = true;
 
             
 
 
-            Process Proc = Process.Start(PSI);
-            Proc.WaitForExit();
-            //SendMessage()
+            
 
             Thread.Sleep(4000);
             
@@ -107,6 +104,7 @@ namespace TestBot
             this.Name = managerName;
             this.ticketID = ticketID;
 
+            //this.Driver.Close();
             return response;
         }
 
