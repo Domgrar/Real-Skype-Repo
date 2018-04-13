@@ -18,7 +18,7 @@ namespace TestBot.Dialogs
     {
 
         static Random rnd = new Random();
-        int verification = 222222;           // rnd.Next(111111, 999999);
+        int verification = rnd.Next(111111, 999999);
 
 
 
@@ -34,7 +34,7 @@ namespace TestBot.Dialogs
             await context.PostAsync("A verification number has been texted to you please type it in");
 
             // Call send message method
-            //sendSMS(verification);
+            sendSMS(verification);
 
             context.Wait(this.MessageReceivedAsync);
             
