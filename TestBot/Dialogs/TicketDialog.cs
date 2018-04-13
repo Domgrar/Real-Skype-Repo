@@ -5,6 +5,7 @@ using Microsoft.Bot.Connector;
 using System.Net.Http;
 using OpenQA.Selenium;
 using OpenQA.Selenium.IE;
+using OpenQA.Selenium.Chrome;
 using System.Threading;
 
 namespace TestBot.Dialogs
@@ -46,7 +47,7 @@ namespace TestBot.Dialogs
             TicketHandler ticketH = new TicketHandler(ticketID);
 
             // Search for ticket in EV
-            IWebDriver driver = new InternetExplorerDriver();
+            IWebDriver driver = new ChromeDriver();
             ticketH.Driver = driver;
             
             //Calls method to get all the ticket information
