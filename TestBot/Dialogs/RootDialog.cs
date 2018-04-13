@@ -46,6 +46,12 @@ namespace TestBot.Dialogs
                 Text = $"Change password",
                 Value = $"password"
             });
+            actions.Add(new CardAction
+            {
+                Title = $"Check Outtage",
+                Text = $"check outtage",
+                Value = $"outtage"
+            });
 
             reply.Attachments.Add(
                 new HeroCard

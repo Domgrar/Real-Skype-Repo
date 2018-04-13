@@ -131,6 +131,7 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Dialogs\CheckOuttageDialog.cs" />
     <Compile Include="Dialogs\CitrixSessionDialog.cs" />
     <Compile Include="Dialogs\NameDialog.cs" />
     <Compile Include="Dialogs\PasswordChangeDialog.cs" />
