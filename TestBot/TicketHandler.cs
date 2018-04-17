@@ -66,6 +66,8 @@ namespace TestBot
             
             incidentSearch.SendKeys(ticketNumber);
             incidentSearch.SendKeys(OpenQA.Selenium.Keys.Enter);
+
+
             //Thread.Sleep(7000);
             this.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             try
