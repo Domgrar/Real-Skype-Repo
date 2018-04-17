@@ -146,6 +146,7 @@
     <Compile Include="PrinterLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TicketHandler.cs" />
+    <Compile Include="WebDriverExtension.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
