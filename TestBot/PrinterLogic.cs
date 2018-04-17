@@ -8,14 +8,13 @@ namespace TestBot
 {
     public class PrinterLogic
     {
-        public IWebDriver Driver { get; set; }
-        public String Name { get; set; }
-        public string ticketID { get; set; }
+        public string officeName { get; set; }
 
-        public void navigateToPrinters(string officeLocation)
+        // Generate list of printers based on office
+
+        public PrinterLogic(string officeName)
         {
-            
-            this.Driver.Navigate().GoToUrl("http://dcprtmon02.corp.local/"); //http://dcprtmon02.corp.local/144-548-301/
+
         }
 
     }
