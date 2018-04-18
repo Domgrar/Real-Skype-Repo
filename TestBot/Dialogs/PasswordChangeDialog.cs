@@ -78,30 +78,30 @@ namespace TestBot.Dialogs
                 string filePath = @"C:\Users\jf6856\Desktop\File Store\ConnectToAdminVPN.bat";
 
                 //Convert to Uri. Bot can send absolute Uri path only as attachment.
+                /*
+                var reply = context.MakeMessage();
+                reply.Attachments = new List<Attachment>();
+                var actions = new List<CardAction>();
 
-                var uri = new System.Uri(filePath);
+                actions.Add(new CardAction
+                {
+                    Title = $"openURL",
+                    Text = $"Go to this URL",
+                    Value = @"[link](C:\Users\jf6856\Desktop\File Store\ConnectToAdminVPN.bat)"
+                });
+                reply.Attachments.Add(
+                new HeroCard
+                {
+                    Title = "Click Button below",
+                    Buttons = actions
+                }.ToAttachment()
+            );
+            */
 
-                var reply = activity.CreateReply();
-                ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+                await context.PostAsync(@"[link](C:\Users\jf6856\Desktop\File Store\ConnectToAdminVPN.bat)");
+                
 
-                Attachment attachment = new Attachment();
-
-                attachment.ContentType = "application/batch";
-
-                //Content Url for the attachment can only be Absolute Uri
-
-                Activity message = activity.CreateReply("Please check the image you have requested for.");
-                attachment.ContentUrl = uri.AbsoluteUri;
-
-                //Add attachment to the message
-
-                message.Attachments.Add(attachment);
-
-
-
-
-
-                await connector.Conversations.ReplyToActivityAsync(message);
+                
             }
 
 
