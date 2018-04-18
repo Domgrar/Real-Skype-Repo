@@ -40,6 +40,12 @@ namespace TestBot.Dialogs
             {
             var activity = await result as Activity;
 
+            //While loop to wait while another SessionMangager is trying to kill session
+            while(Process.GetProcessesByName("SessionManager.exe").Length > 0)
+            {
+                Thread.Sleep(4000);
+            }
+
             ProcessStartInfo PSI = new ProcessStartInfo("SessionManager.exe"); //         //"param1 jf6856"
             PSI.Arguments = "param1 " + activity.Text.Trim();
             PSI.WorkingDirectory = "C:\\Users\\jf6856\\Desktop\\";
@@ -52,7 +58,7 @@ namespace TestBot.Dialogs
             Proc.WaitForExit();
 
 
-            await context.PostAsync("Session should be cleared. Email the service desk if issues persist");
+            await context.PostAsync("Session should be cleared. Contact the service desk if issues persist");
             
                 
 

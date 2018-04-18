@@ -75,9 +75,33 @@ namespace TestBot.Dialogs
             }
             else
             {
-                await context.PostAsync("Go to this site - C:\\Users\\jf6856\\Desktop\\File Store\\index.html \n and click the download button \n " +
-                    "There is documentation there if you need assistance \n" +
-                    "Please select the Allow Blocked Contect in the bottom of the page!");
+                string filePath = @"C:\Users\jf6856\Desktop\File Store\ConnectToAdminVPN.bat";
+
+                //Convert to Uri. Bot can send absolute Uri path only as attachment.
+
+                var uri = new System.Uri(filePath);
+
+                var reply = activity.CreateReply();
+                ConnectorClient connector = new ConnectorClient(new Uri(activity.ServiceUrl));
+
+                Attachment attachment = new Attachment();
+
+                attachment.ContentType = "application/batch";
+
+                //Content Url for the attachment can only be Absolute Uri
+
+                Activity message = activity.CreateReply("Please check the image you have requested for.");
+                attachment.ContentUrl = uri.AbsoluteUri;
+
+                //Add attachment to the message
+
+                message.Attachments.Add(attachment);
+
+
+
+
+
+                await connector.Conversations.ReplyToActivityAsync(message);
             }
 
 

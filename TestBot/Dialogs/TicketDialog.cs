@@ -40,7 +40,7 @@ namespace TestBot.Dialogs
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
-            bool CheckInputFlag= true;
+            
             String ticketID;
             
 
@@ -53,7 +53,7 @@ namespace TestBot.Dialogs
 
                 if (ticketID.ToLower().Contains("i") && ticketID.Contains("_"))
                 {
-                    CheckInputFlag = false;
+                    
                 }
                 else
                 {
