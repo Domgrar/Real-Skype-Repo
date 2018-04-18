@@ -40,12 +40,31 @@ namespace TestBot.Dialogs
         private async Task MessageReceivedAsync(IDialogContext context, IAwaitable<object> result)
         {
             var activity = await result as Activity;
-            
+            bool CheckInputFlag= true;
+            String ticketID;
             
 
             // calculate something for us to return
             int length = (activity.Text ?? string.Empty).Length;
-            String ticketID = activity.Text;
+
+            
+                
+                ticketID = activity.Text;
+
+                if (ticketID.ToLower().Contains("i") && ticketID.Contains("_"))
+                {
+                    CheckInputFlag = false;
+                }
+                else
+                {
+                    ticketID = "";
+                    await context.PostAsync("Input invalid please enter ticket number again : (I123456_123456)");
+
+                    return;
+                }
+                //Verify string format
+
+            
             TicketHandler ticketH = new TicketHandler(ticketID);
 
             var options = new InternetExplorerOptions();
