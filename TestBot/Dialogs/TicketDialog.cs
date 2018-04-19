@@ -41,11 +41,30 @@ namespace TestBot.Dialogs
         {
             var activity = await result as Activity;
             
+            String ticketID;
             
 
             // calculate something for us to return
             int length = (activity.Text ?? string.Empty).Length;
-            String ticketID = activity.Text;
+
+            
+                
+                ticketID = activity.Text;
+
+                if (ticketID.ToLower().Contains("i") && ticketID.Contains("_"))
+                {
+                    
+                }
+                else
+                {
+                    ticketID = "";
+                    await context.PostAsync("Input invalid please enter ticket number again : (I123456_123456)");
+
+                    return;
+                }
+                //Verify string format
+
+            
             TicketHandler ticketH = new TicketHandler(ticketID);
 
             var options = new InternetExplorerOptions();
@@ -60,7 +79,7 @@ namespace TestBot.Dialogs
             string response = ticketH.getTicketInfo(ticketID);
             await context.PostAsync(response);
 
-            if (response != "The ticket could not be found please try again.")
+            if (response != "The ticket could not be found please try again. Trials")
             {
                 TicketHandler.sendEmailToTech(ticketH.Name, "ALERT URGENT", "User for " + ticketH.ticketID + " is checking their ticket respond to them now.");
             }

@@ -53,20 +53,23 @@ namespace TestBot
             
             this.Driver.Navigate().GoToUrl("https://dhgllp.easyvista.com/");
 
-            
-
-            
 
 
-            
 
-            Thread.Sleep(4000);
-            
+
+
+
+
+            //Thread.Sleep(4000);
+            this.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             IWebElement incidentSearch = this.Driver.FindElement(By.XPath("//input[@name='GlobalSearchText']"));
+            
             incidentSearch.SendKeys(ticketNumber);
             incidentSearch.SendKeys(OpenQA.Selenium.Keys.Enter);
-            Thread.Sleep(7000);
 
+
+            //Thread.Sleep(7000);
+            this.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             try
             {
                 IWebElement managerElement = this.Driver.FindElement(By.XPath("//div[contains(@class, 'awesomeMainDiv')]"));
@@ -107,6 +110,9 @@ namespace TestBot
             this.Driver.Close();
             return response;
         }
+
+       
+
 
         public static void sendEmailToTech(String techName, String subject, String body)
         {

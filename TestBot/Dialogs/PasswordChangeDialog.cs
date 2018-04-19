@@ -75,9 +75,33 @@ namespace TestBot.Dialogs
             }
             else
             {
-                await context.PostAsync("Go to this site - C:\\Users\\jf6856\\Desktop\\File Store\\index.html \n and click the download button \n " +
-                    "There is documentation there if you need assistance \n" +
-                    "Please select the Allow Blocked Contect in the bottom of the page!");
+                string filePath = @"C:\Users\jf6856\Desktop\File Store\ConnectToAdminVPN.bat";
+
+                //Convert to Uri. Bot can send absolute Uri path only as attachment.
+                /*
+                var reply = context.MakeMessage();
+                reply.Attachments = new List<Attachment>();
+                var actions = new List<CardAction>();
+
+                actions.Add(new CardAction
+                {
+                    Title = $"openURL",
+                    Text = $"Go to this URL",
+                    Value = @"[link](C:\Users\jf6856\Desktop\File Store\ConnectToAdminVPN.bat)"
+                });
+                reply.Attachments.Add(
+                new HeroCard
+                {
+                    Title = "Click Button below",
+                    Buttons = actions
+                }.ToAttachment()
+            );
+            */
+
+                await context.PostAsync(@"[link](C:\Users\jf6856\Desktop\File Store\ConnectToAdminVPN.bat)");
+                
+
+                
             }
 
 
