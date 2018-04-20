@@ -56,7 +56,7 @@ namespace TestBot.Dialogs
                 if (ticketID.ToLower().Contains("i") || ticketID.ToLower().Contains("s") && ticketID.Contains("_"))
                 {
                 ticketH = new TicketHandler(ticketID);
-                if (ticketID.StartsWith("s"))
+                if (ticketID.ToLower().StartsWith("s"))
                 {
                     ticketH.IsIncident = false;
                 }
