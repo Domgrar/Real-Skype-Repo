@@ -51,7 +51,7 @@ namespace TestBot.Dialogs
                 
                 ticketID = activity.Text;
 
-                if (ticketID.ToLower().Contains("i") && ticketID.Contains("_"))
+                if (ticketID.ToLower().Contains("i") || ticketID.ToLower().Contains("s") && ticketID.Contains("_"))
                 {
                     
                 }

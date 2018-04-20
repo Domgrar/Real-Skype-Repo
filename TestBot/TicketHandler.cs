@@ -50,13 +50,32 @@ namespace TestBot
             string managerName;
             string response;
             string progressText;
+            IWebElement dropDownMenu;
             
             this.Driver.Navigate().GoToUrl("https://dhgllp.easyvista.com/");
 
+            this.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+            //Check if searching for a service request or incident nubmer
+            dropDownMenu = this.Driver.FindElement(By.XPath("//input[@id='GlobalCurrentQuerycombo-ui']"));
+            if (this.ticketID.ToLower().StartsWith("s"))
+            {
+                dropDownMenu.SendKeys(Keys.Control + "a");
+                dropDownMenu.SendKeys("Service Requests");
+                
+                dropDownMenu.SendKeys(Keys.ArrowDown); dropDownMenu.SendKeys(Keys.ArrowDown);
+                dropDownMenu.SendKeys(Keys.Enter);
+            }else if (this.ticketID.ToLower().StartsWith("i"))
+            {
+                dropDownMenu.SendKeys("Incidents");
+                dropDownMenu.SendKeys(Keys.ArrowDown); 
+                dropDownMenu.SendKeys(Keys.Enter);
+            }
+            else
+            {
+                throw new NotFoundException();
+            }
 
-
-
-
+            
 
 
 
