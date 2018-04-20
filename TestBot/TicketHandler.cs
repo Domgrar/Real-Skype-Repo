@@ -133,7 +133,7 @@ namespace TestBot
 
 
             //Scrape for information          
-            progressStatus = this.Driver.FindElement(By.XPath("//input[@name='SD_REQUEST .MAX_RESOLUTION_DATE_UT']"));
+            progressStatus = this.Driver.FindElement(By.XPath("//input[@name='SD_REQUEST.MAX_RESOLUTION_DATE_UT']"));
             targetDate = progressStatus.Text;
             
             response = "The request is expected to be there/setup on " + targetDate + " Please contact the service desk if it is past this target date. ";
