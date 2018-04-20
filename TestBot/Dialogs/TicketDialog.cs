@@ -18,6 +18,7 @@ namespace TestBot.Dialogs
         
         private string name;
         private int attempts = 3;
+        public string response;
 
         public TicketDialog()
         {
@@ -42,7 +43,8 @@ namespace TestBot.Dialogs
             var activity = await result as Activity;
             
             String ticketID;
-            
+            TicketHandler ticketH;
+
 
             // calculate something for us to return
             int length = (activity.Text ?? string.Empty).Length;
@@ -53,6 +55,15 @@ namespace TestBot.Dialogs
 
                 if (ticketID.ToLower().Contains("i") || ticketID.ToLower().Contains("s") && ticketID.Contains("_"))
                 {
+                ticketH = new TicketHandler(ticketID);
+                if (ticketID.StartsWith("s"))
+                {
+                    ticketH.IsIncident = false;
+                }
+                else
+                {
+                    ticketH.IsIncident = true;
+                }
                     
                 }
                 else
@@ -65,7 +76,7 @@ namespace TestBot.Dialogs
                 //Verify string format
 
             
-            TicketHandler ticketH = new TicketHandler(ticketID);
+            
 
             var options = new InternetExplorerOptions();
             options.IntroduceInstabilityByIgnoringProtectedModeSettings = true;
@@ -73,11 +84,19 @@ namespace TestBot.Dialogs
             // Search for ticket in EV
             IWebDriver driver = new InternetExplorerDriver(options);
             ticketH.Driver = driver;
-            
-            
+
+
             //Calls method to get all the ticket information
-            string response = ticketH.getTicketInfo(ticketID);
-            await context.PostAsync(response);
+            if (ticketH.IsIncident)
+            {
+                response = ticketH.getTicketInfo(ticketID);
+                await context.PostAsync(response);
+            }
+            else
+            {
+                response = ticketH.getServiceRequest(ticketID);
+                await context.PostAsync(response);
+            }
 
             if (response != "The ticket could not be found please try again. Trials")
             {

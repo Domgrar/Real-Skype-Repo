@@ -19,29 +19,20 @@ namespace TestBot
 {
     public class TicketHandler
     {
-        [DllImport("user32.dll")]
-        static extern IntPtr GetForegroundWindow();
-
-        [DllImport("user32.dll")]
-        static extern IntPtr GetFocusedWindow();
-
-        [DllImport("users32.dll")]
-        static extern int GetWindowText(IntPtr hWnd, StringBuilder text, int count);
-
-        [DllImport("user32.dll", EntryPoint = "FindWindowEx")]
-        public static extern IntPtr FindWindowEx(IntPtr hwndParent, IntPtr hwndChildAfter, string lpszClass, string lpszWindow);
-        [DllImport("User32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int uMsg, int wParam, string lParam);
-
         
-
         public IWebDriver Driver { get; set; }
         public String Name { get; set; }
         public string ticketID { get; set; }
+        public bool IsIncident { get; set; }
 
         public TicketHandler(string ticket)
         {
             this.ticketID = ticket;
+        }
+        public TicketHandler(string ticket, bool isIncident)
+        {
+            this.ticketID = ticket;
+            this.IsIncident = isIncident;
         }
 
 
@@ -57,27 +48,11 @@ namespace TestBot
             this.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             //Check if searching for a service request or incident nubmer
             dropDownMenu = this.Driver.FindElement(By.XPath("//input[@id='GlobalCurrentQuerycombo-ui']"));
-            if (this.ticketID.ToLower().StartsWith("s"))
-            {
-                dropDownMenu.SendKeys(Keys.Control + "a");
-                dropDownMenu.SendKeys("Service Requests");
-                
-                dropDownMenu.SendKeys(Keys.ArrowDown); dropDownMenu.SendKeys(Keys.ArrowDown);
-                dropDownMenu.SendKeys(Keys.Enter);
-            }else if (this.ticketID.ToLower().StartsWith("i"))
-            {
-                dropDownMenu.SendKeys("Incidents");
-                dropDownMenu.SendKeys(Keys.ArrowDown); 
-                dropDownMenu.SendKeys(Keys.Enter);
-            }
-            else
-            {
-                throw new NotFoundException();
-            }
 
-            
-
-
+            dropDownMenu.SendKeys(Keys.Control + "a");
+            dropDownMenu.SendKeys("Incidents");
+            dropDownMenu.SendKeys(Keys.ArrowDown);
+            dropDownMenu.SendKeys(Keys.Enter);
 
             //Thread.Sleep(4000);
             this.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
@@ -130,7 +105,40 @@ namespace TestBot
             return response;
         }
 
-       
+       public string getServiceRequest( string ticketNumber)
+        {
+            string response;
+            IWebElement managerName;
+            IWebElement progressStatus;
+            IWebElement dropDownMenu;
+            string targetDate;
+
+            this.Driver.Navigate().GoToUrl("https://dhgllp.easyvista.com/");
+            this.Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
+
+            //Change to search for service request
+            dropDownMenu = this.Driver.FindElement(By.XPath("//input[@id='GlobalCurrentQuerycombo-ui']"));
+
+            dropDownMenu.SendKeys(Keys.Control + "a");
+            dropDownMenu.SendKeys("Service Requests");
+            dropDownMenu.SendKeys(Keys.ArrowDown); dropDownMenu.SendKeys(Keys.ArrowDown);
+            dropDownMenu.SendKeys(Keys.Enter);
+
+
+            //Send ticket Number
+            IWebElement incidentSearch = this.Driver.FindElement(By.XPath("//input[@name='GlobalSearchText']"));
+
+            incidentSearch.SendKeys(ticketNumber);
+            incidentSearch.SendKeys(OpenQA.Selenium.Keys.Enter);
+
+
+            //Scrape for information          
+            targetDate = this.Driver.FindElement(By.XPath("//input[@name='SD_REQUEST.MAX_RESOLUTION_DATE_UT")).Text;
+
+            response = "The request is expected to be there/setup on " + targetDate + " Please contact the service desk if it is past this target date. ";
+
+            return response;
+        }
 
 
         public static void sendEmailToTech(String techName, String subject, String body)
